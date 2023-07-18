@@ -8,7 +8,7 @@ GET https://pizza-api.projectcodex.net/api/pizzas
 GET https://pizza-api.projectcodex.net/api/pizza-cart/create?username=NoonAK-N
 
 ### Get a cart
-GET https://pizza-api.projectcodex.net/api/pizza-cart/mb9bPamDs5/get
+GET https://pizza-api.projectcodex.net/api/pizza-cart/cLXxz87Wyg/get
 
 ### add a pizza to the cart 
 
