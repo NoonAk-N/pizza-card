@@ -1,0 +1,60 @@
+# pizza API
+
+ 
+GET https://pizza-api.projectcodex.net/api/pizzas
+
+### Create a cart 
+
+GET https://pizza-api.projectcodex.net/api/pizza-cart/create?username=NoonAK-N
+
+### Get a cart
+GET https://pizza-api.projectcodex.net/api/pizza-cart/mb9bPamDs5/get
+
+### add a pizza to the cart 
+
+POST https://pizza-api.projectcodex.net/api/pizza-cart/add
+Content-Type: application/json
+
+{
+
+    "cart_code" :"mb9bPamDs5",
+    "pizza_id" : 8
+}
+### add a pizza to the cart 
+POST https://pizza-api.projectcodex.net/api/pizza-cart/add
+Content-Type: application/json
+  
+
+  {
+
+    "cart_code" :"mb9bPamDs5",
+    "pizza_id" : 3
+}
+
+### Remove a pizza from the cart
+POST https://pizza-api.projectcodex.net/api/pizza-cart/remove
+Content-Type: application/json
+
+{
+
+    "cart_code" :"mb9bPamDs5",
+    "pizza_id" : 3
+}
+
+### GET all the carts for a given user 
+
+GET https://pizza-api.projectcodex.net/api/pizza-cart/username/NoonAK-N
+
+### GET all the  active carts for a  user
+
+GET https://pizza-api.projectcodex.net/api/pizza-cart/username/NoonAk-N/active
+
+
+### Pay for a pizza from the cart 
+
+POST https://pizza-api.projectcodex.net/api/pizza-cart/pay
+{
+
+    "cart_code" :"mb9bPamDs5",
+    "amount" : 400
+}
