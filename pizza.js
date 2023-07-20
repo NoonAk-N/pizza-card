@@ -1,7 +1,7 @@
 document.addEventListener("alpine:init", () => {
     Alpine.data('pizzaCart', () => {
         return {
-            title: 'Pizza Cart API',
+            title: '🍕Pizza Cart API',
             pizzas: [],
             username: '',
             cartId: '',
@@ -24,17 +24,22 @@ document.addEventListener("alpine:init", () => {
                 setTimeout(() => {
                     window.location.reload();
                 }, 3000)
+                this.loggedIn=false
             },
+        
 
             logIn() {
                 localStorage.setItem('username', this.username);
                 this.createCart().then(cart => {
                     this.cartId = cart.data.cart_code;
                     localStorage.setItem('cartId', cart.data.cart_code);
+                    
+                   if (this.username.length > 2) {
                     this.loggedIn = true;
-                    setTimeout(() => {
-                        window.location.reload();
-                    }, 1000)
+                   }
+                   else if (this.username.length < 2) {
+                    alert("Please, type your name!");
+                   }
                 })
 
             },
@@ -138,10 +143,10 @@ document.addEventListener("alpine:init", () => {
                     .pay(this.paymentAmount)
                     .then(result => {
                         if (result.data.status == 'failure') {
-                            this.message = result.data.message;
-                            setTimeout(() => this.message = '', 3000);
+                            this.message = 'Amount is not enough';
+                            setTimeout(() => this.message = '', 4000);
                         } else {
-                            this.message = 'Payment Received, Enjoy!';
+                            this.message = 'Payment Received, Enjoy your PIZZA 🍕😋!';
 
                             setTimeout(() => {
                                 this.message = '';

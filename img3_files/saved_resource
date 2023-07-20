@@ -1,0 +1,50 @@
+
+var ftGUID_4229788="5678FB051FBFE2";
+var ftConfID_4229788="0";
+var ftParams_4229788="ftOBA=1&ft_domain=69936584a11d0e0ae811375eaa86dde3.safeframe.googlesyndication.com&ft_ifb=1&ft_agentEnv=0&ft_referrer=https%3A%2F%2F69936584a11d0e0ae811375eaa86dde3.safeframe.googlesyndication.com%2F&gdpr=0&us_privacy=${US_PRIVACY}&cachebuster=922660.9412915161&ft_dv=%5B%25ft_dv%25%5D";
+var ftKeyword_4229788="";
+var ftCustom_4229788="";
+var ftSection_4229788="";
+var ftSegment_4229788="afr5";
+var ftSegmentList_4229788=[{s:'afr5'}];
+var ftRuleMatch_4229788="0";
+var ftTimestamp_4229788="1689876707";
+var ftGeoC2_4229788="za";
+var ftGeoState_4229788="gp";
+var ftGeoCity_4229788="krugersdorp";
+var ftISP_4229788="vox telecom ltd";
+var ftSpeed_4229788="broadband";
+var ftConnType_4229788="wifi";
+var ftDMA_4229788="-1";
+var ftLong_4229788="27.92";
+var ftLat_4229788="-26.13";
+var ftPostal_4229788="1718";
+var ftTimeZone_4229788="+200";
+var ftMobileCarrier_4229788="";
+var ftImp4229788 = {};
+ftImp4229788.privacy = "x";
+ftImp4229788.guidAge = "1";
+ftImp4229788.impID = "1E7449DF-1A16-8892-0571-1A1D07B60308";
+ftImp4229788.duid = "FT:5678FB051FBFE2";
+
+ftImp4229788.ft_tpplid = "";
+ftImp4229788.ft_c = {};
+ftImp4229788.gdpr = "0";
+ftImp4229788.gdpr_consent = "";
+ftImp4229788.gdpr_pd = "";
+ftImp4229788.oob_consent = "";
+ftImp4229788.gdprStoredConsent = "";
+ftImp4229788.us_privacy = "!!US_PRIVACY!";
+ftImp4229788.gpc = "";
+
+ftImp4229788.jsAppend = "1";
+(function(){
+    var tag = document.getElementById('ft_servedby_4229788') || (function(s){
+    	return s[s.length-1];
+    }(document.getElementsByTagName('script'))),
+           js = document.createElement('script');
+    js.src =
+"https://cdn.flashtalking.com/xre/422/4229788/4112610/js/j-4229788-4112610.js";
+    js.id = "ftscript_m4229788";
+    tag.parentNode.insertBefore(js, tag);
+}());
