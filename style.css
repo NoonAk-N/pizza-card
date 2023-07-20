@@ -1,0 +1,96 @@
+.body {
+  background-color: rgb(238, 181, 233);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container{
+  text-align: center;
+}
+.pizza {
+  border: 1px solid #BF4F51;
+  padding: 1em;
+  margin: 2em;
+  margin-bottom: 0.5em;
+  border-radius: 5em;
+  width: 25em;
+  display: inline-block;
+  min-height: 30em;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto
+  
+
+  
+}
+.table, th,td{
+  border: 2px solid ;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  
+
+}
+.h2{
+  text-align: center;
+
+}
+.medium_pizza {
+  background-color:#BF4F51;
+  background-image: url("img1.png");
+flex: 1
+}
+
+.large_pizza {
+  background-color: #674846;
+  background-image: url("img2.PNG");
+  flex:2
+
+}
+
+.small_pizza {
+  background-color: #F4C2C2;
+  background-image: url("img3.png");
+  flex:3
+}
+
+.contact_us {
+  background-color: #cb7cf0;
+  border-radius: 2em;
+  padding: 1em;
+  margin: 1em;
+  margin-bottom: 0.5em;
+  text-align: center;
+  
+ 
+  
+}
+.btn{
+  border: 1px;
+  border-radius: 5px;
+  background-color:#3f3d3d;
+  color:black;
+  padding: 10px 20px;
+  font-size: 16;
+  cursor:pointer;
+  transition: all 0.3s ease;
+}
+.special{
+  background-color: black;
+  color: rgb(235, 234, 240);
+  margin: 0em;
+}
+@media (min-width: 760px) {
+
+  body {
+      background-color: rgb(105, 91, 124);
+      
+  }
+}
+
+@media (min-width: 960px) {
+
+  body {
+      background-color: #722F37;
+      
+  }
+  
+}

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="pizza.js"></script>
+
+
+</head>
+
+<body x-data="pizzaCart">
+    <div class="container">
+        <h1 x-text="`${title} of ${username}`"></h1>
+        
+            <div>
+                USERNAME : <input type="text" x-model="username">
+                <button x-on:click="logIn">login</button>
+                <button x-on:click="logOut">Log out</button>
+            </div>
+        
+        <template x-if="loggedIn">
+            <div  class="cart">
+                <div class="cart">
+
+                    <div x-show="cartId">
+                        cart code: <span x-text="cartId"></span>
+                    </div>
+                    <div x-show="cartTotal >0 ">
+
+                        <h2>Your cart</h2>
+                       
+                        <div x-text="message"></div>
+                        
+
+
+                        <table class="table">
+                            <tr>
+                                <th>Flavour</th>
+                                <th>Size</th>
+                                <th>Price</th>
+                                <th>Qty</th>
+                                <th>Total</th>
+                            </tr>
+                            <template x-for="pizza in cartPizzas">
+
+                                <tr>
+                                    <td x-text="pizza.flavour"></td>
+                                    <td x-text="pizza.size"></td>
+                                    <td x-text="pizza.price"></td>
+                                    <td>
+                                        <button x-on:click="addPizzaToCart(pizza.id)">+</button>
+                                        <span x-text="pizza.qty"></span>
+                                        <button x-on:click="removePizzaFromCart(pizza.id)">-</button>
+
+
+                                    </td>
+                                    <td x-text="pizza.total"></td>
+                                </tr>
+                            </template>
+                            
+                            <tr>
+                                <td colspan="3">Total</td>
+                                <td colspan="2" style="float:right">R <span x-text="cartTotal"></span></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">Pay now</td>
+                                <td>
+                                    <input x-model="paymentAmount" type="text">
+                                </td>
+                                <td><button x-on:click="payForCart()" class="btn">Pay</button></td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </template>
+
+    </div>
+
+ <template x-if="loggedIn">
+    <div class="pizzas">
+        <h2 style="text-align: center;">Pizzas-Menu</h2>
+        <div class="pizza small_pizza">
+
+            <h2>Small Pizza</h2>
+           
+            <h3>R49.00</h3>
+            <div>
+            <table class="table">
+                <tr>
+
+                    <th>FLAVOUR</th>
+
+                    <th>PRICE</th>
+                    <th>PLACE ORDER</th>
+                </tr>
+                <!-- LOOPING THROUGH THE PIZZA STARTS HERE FOR THE SMALL PIZZA ALONE -->
+                <template x-for="pizza in pizzas">
+
+                    <template x-if="pizza['size']=='small'">
+
+                        <tr>
+
+                            <td x-text="pizza.flavour"></td>
+
+                            <td>R<strong><label x-text="pizza.price"></label></strong></td>
+                            <td><button x-on:click="addPizzaToCart(pizza.id)" class="btn">order</button></td>
+                        </tr>
+                    </template>
+                </template>
+            </table>
+        </div>
+    </div>
+        <div class="pizza medium_pizza">
+            <h2>Medium Pizza</h2>
+          
+            <h3>R89.00</h3>
+            <div>
+            <table class="table">
+                <tr>
+
+                    <th>FLAVOUR</th>
+
+                    <th>PRICE</th>
+                    <th>PLACE ORDER</th>
+                </tr>
+                <!-- LOOPING THROUGH THE PIZZA STARTS HERE FOR THE SMALL PIZZA ALONE -->
+                <template x-for="pizza in pizzas">
+
+                    <template x-if="pizza['size']=='medium'">
+
+                        <tr>
+
+                            <td x-text="pizza.flavour"></td>
+
+                            <td>R<strong><label x-text="pizza.price"></label></strong></td>
+                            <td><button x-on:click="addPizzaToCart(pizza.id)" class="btn">order</button></td>
+                        </tr>
+                    </template>
+                </template>
+            </table>
+        </div>
+    </div>
+
+    <div class="pizza large_pizza">
+        <h2>Large Pizza</h2>
+       
+        <h3>R129.00</h3>
+        <div>
+            <table class="table">
+                <tr>
+
+                    <th>FLAVOUR</th>
+
+                    <th>PRICE</th>
+                    <th>PLACE ORDER</th>
+                </tr>
+                <!-- LOOPING THROUGH THE PIZZA STARTS HERE FOR THE SMALL PIZZA ALONE -->
+                <template x-for="pizza in pizzas">
+
+                    <template x-if="pizza['size']=='large'">
+
+                        <tr>
+
+                            <td x-text="pizza.flavour"></td>
+
+                            <td>R<strong><label x-text="pizza.price"></label></strong></td>
+                            <td><button x-on:click="addPizzaToCart(pizza.id)" class="btn">order</button></td>
+                        </tr>
+                    </template>
+                </template>
+            </table>
+        </div>
+    </div>
+
+    <div class="contact_us">
+        <img src="call.JPEG" width="100"   >
+        <h2>Contact details</h2>
+
+        Contact us at:011341231
+        <br>email adress: info@perfectpizza.co.za</br>
+        <br>Facebook: PERFECT-PIZZA</br>
+        <br>Twitter: @Perfect_pizza</br>
+        <br>location: Randburg,Johannesburg</br>
+    </div>
+
+
+
+
+
+    </div>
+ </template>
+
+
+</body>
+
+</html>
